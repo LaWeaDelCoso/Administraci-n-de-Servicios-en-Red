@@ -1,0 +1,10 @@
+ISP FastEthernet0/0 to NAT nat0
+ISP FastEthernet2/0 to HostExterno Ethernet0
+ISP FastEthernet1/0 to Edge FastEthernet1/0
+Edge FastEthernet0/0 to R1 FastEthernet0/0
+R1 FastEthernet1/0 to Switch1 Ethernet0
+R1 FastEthernet2/0 to Switch2 Ethernet0
+Switch1 Ethernet1 to PC1 Ethernet0
+Switch2 Ethernet1 to PC2 Ethernet0
+Switch2 Ethernet2 to Srv-DNS FastEthernet0/0
+Switch2 Ethernet3 to Srv-DHCP FastEthernet0/0

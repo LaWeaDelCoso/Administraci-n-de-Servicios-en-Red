@@ -1,0 +1,36 @@
+2026-07-03T01:03:37.894Z HYPERVISOR: Release 0.2.24-amd64/Linux (tag 2023010200)
+2026-07-03T01:03:37.895Z HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 40565.
+2026-07-03T01:03:37.903Z HYPERVISOR: exec_cmd: hypervisor version 
+2026-07-03T01:03:37.903Z HYPERVISOR: exec_cmd: hypervisor working_dir /home/laweadelcoso/Documents/Repositories/Administraci-n-de-Servicios-en-Red/ETS_2026_2/project-files/dynamips 
+2026-07-03T01:03:37.903Z GENERAL: working_dir=/home/laweadelcoso/Documents/Repositories/Administraci-n-de-Servicios-en-Red/ETS_2026_2/project-files/dynamips
+2026-07-03T01:03:37.903Z HYPERVISOR: exec_cmd: hypervisor working_dir /home/laweadelcoso/Documents/Repositories/Administraci-n-de-Servicios-en-Red/ETS_2026_2/project-files/dynamips/d8b0711c-21ff-4a8b-9742-c8e608ab24f9 
+2026-07-03T01:03:37.903Z GENERAL: working_dir=/home/laweadelcoso/Documents/Repositories/Administraci-n-de-Servicios-en-Red/ETS_2026_2/project-files/dynamips/d8b0711c-21ff-4a8b-9742-c8e608ab24f9
+2026-07-03T01:03:37.903Z HYPERVISOR: exec_cmd: vm create R4 4 c7200 
+2026-07-03T01:03:37.904Z VM: VM R4 created.
+2026-07-03T01:03:37.904Z HYPERVISOR: exec_cmd: vm set_con_tcp_port R4 5004 
+2026-07-03T01:03:37.904Z HYPERVISOR: exec_cmd: c7200 get_mac_addr R4 
+2026-07-03T01:03:37.904Z HYPERVISOR: exec_cmd: vm get_status R4 
+2026-07-03T01:03:37.904Z HYPERVISOR: exec_cmd: vm slot_add_binding R4 0 0 C7200-IO-FE 
+2026-07-03T01:03:37.904Z HYPERVISOR: exec_cmd: vm set_nvram R4 512 
+2026-07-03T01:03:37.904Z HYPERVISOR: exec_cmd: vm set_ram R4 512 
+2026-07-03T01:03:37.904Z HYPERVISOR: exec_cmd: vm set_ios R4 /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:03:37.904Z HYPERVISOR: exec_cmd: vm get_status R4 
+2026-07-03T01:03:37.905Z HYPERVISOR: exec_cmd: vm set_idle_pc R4 0x6066a998 
+2026-07-03T01:03:37.905Z HYPERVISOR: exec_cmd: vm set_disk0 R4 0 
+2026-07-03T01:03:37.905Z HYPERVISOR: exec_cmd: vm get_status R4 
+2026-07-03T01:03:37.905Z HYPERVISOR: exec_cmd: vm slot_add_binding R4 1 0 PA-FE-TX 
+2026-07-03T01:03:37.905Z HYPERVISOR: exec_cmd: vm get_status R4 
+2026-07-03T01:03:37.905Z HYPERVISOR: exec_cmd: vm slot_add_binding R4 2 0 PA-FE-TX 
+2026-07-03T01:03:37.944Z HYPERVISOR: exec_cmd: vm set_ios R4 /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:03:49.585Z HYPERVISOR: exec_cmd: vm set_ios R4 /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:17:17.782Z HYPERVISOR: exec_cmd: vm set_ios R4 /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:17:17.783Z HYPERVISOR: exec_cmd: vm rename R4 Srv-DHCP 
+2026-07-03T01:17:17.828Z HYPERVISOR: exec_cmd: vm set_ios Srv-DHCP /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:21:25.933Z HYPERVISOR: exec_cmd: vm set_ios Srv-DHCP /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T02:05:36.814Z HYPERVISOR: exec_cmd: vm get_status Srv-DHCP 
+2026-07-03T02:05:36.814Z HYPERVISOR: exec_cmd: vm extract_config Srv-DHCP 
+2026-07-03T02:05:36.814Z HYPERVISOR: exec_cmd: vm delete Srv-DHCP 
+2026-07-03T02:05:36.814Z VM: VM Srv-DHCP destroyed.
+2026-07-03T02:05:36.814Z HYPERVISOR: exec_cmd: hypervisor stop 
+2026-07-03T02:05:37.037Z HYPERVISOR: Stopped.
+2026-07-03T02:05:37.037Z GENERAL: reset done.

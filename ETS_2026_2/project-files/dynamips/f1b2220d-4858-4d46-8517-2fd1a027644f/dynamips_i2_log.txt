@@ -1,0 +1,46 @@
+2026-07-03T01:03:34.822Z HYPERVISOR: Release 0.2.24-amd64/Linux (tag 2023010200)
+2026-07-03T01:03:34.822Z HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 35465.
+2026-07-03T01:03:34.830Z HYPERVISOR: exec_cmd: hypervisor version 
+2026-07-03T01:03:34.831Z HYPERVISOR: exec_cmd: hypervisor working_dir /home/laweadelcoso/Documents/Repositories/Administraci-n-de-Servicios-en-Red/ETS_2026_2/project-files/dynamips 
+2026-07-03T01:03:34.831Z GENERAL: working_dir=/home/laweadelcoso/Documents/Repositories/Administraci-n-de-Servicios-en-Red/ETS_2026_2/project-files/dynamips
+2026-07-03T01:03:34.831Z HYPERVISOR: exec_cmd: hypervisor working_dir /home/laweadelcoso/Documents/Repositories/Administraci-n-de-Servicios-en-Red/ETS_2026_2/project-files/dynamips/f1b2220d-4858-4d46-8517-2fd1a027644f 
+2026-07-03T01:03:34.831Z GENERAL: working_dir=/home/laweadelcoso/Documents/Repositories/Administraci-n-de-Servicios-en-Red/ETS_2026_2/project-files/dynamips/f1b2220d-4858-4d46-8517-2fd1a027644f
+2026-07-03T01:03:34.831Z HYPERVISOR: exec_cmd: vm create R2 2 c7200 
+2026-07-03T01:03:34.831Z VM: VM R2 created.
+2026-07-03T01:03:34.831Z HYPERVISOR: exec_cmd: vm set_con_tcp_port R2 5002 
+2026-07-03T01:03:34.831Z HYPERVISOR: exec_cmd: c7200 get_mac_addr R2 
+2026-07-03T01:03:34.831Z HYPERVISOR: exec_cmd: vm get_status R2 
+2026-07-03T01:03:34.831Z HYPERVISOR: exec_cmd: vm slot_add_binding R2 0 0 C7200-IO-FE 
+2026-07-03T01:03:34.831Z HYPERVISOR: exec_cmd: vm set_nvram R2 512 
+2026-07-03T01:03:34.831Z HYPERVISOR: exec_cmd: vm set_ram R2 512 
+2026-07-03T01:03:34.832Z HYPERVISOR: exec_cmd: vm set_ios R2 /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:03:34.832Z HYPERVISOR: exec_cmd: vm get_status R2 
+2026-07-03T01:03:34.832Z HYPERVISOR: exec_cmd: vm set_idle_pc R2 0x6066a998 
+2026-07-03T01:03:34.832Z HYPERVISOR: exec_cmd: vm set_disk0 R2 0 
+2026-07-03T01:03:34.832Z HYPERVISOR: exec_cmd: vm get_status R2 
+2026-07-03T01:03:34.832Z HYPERVISOR: exec_cmd: vm slot_add_binding R2 1 0 PA-FE-TX 
+2026-07-03T01:03:34.832Z HYPERVISOR: exec_cmd: vm get_status R2 
+2026-07-03T01:03:34.832Z HYPERVISOR: exec_cmd: vm slot_add_binding R2 2 0 PA-FE-TX 
+2026-07-03T01:03:34.865Z HYPERVISOR: exec_cmd: vm set_ios R2 /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:03:44.619Z HYPERVISOR: exec_cmd: vm set_ios R2 /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:16:47.553Z HYPERVISOR: exec_cmd: vm set_ios R2 /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:16:47.554Z HYPERVISOR: exec_cmd: vm rename R2 Edge 
+2026-07-03T01:16:47.598Z HYPERVISOR: exec_cmd: vm set_ios Edge /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:18:53.385Z HYPERVISOR: exec_cmd: vm set_ios Edge /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:18:59.683Z HYPERVISOR: exec_cmd: vm set_ios Edge /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:19:53.880Z HYPERVISOR: exec_cmd: nio create_udp udp-5d56352f-8885-4610-b9fc-77ba95cdd377 10008 127.0.0.1 10009 
+2026-07-03T01:19:54.085Z HYPERVISOR: exec_cmd: vm slot_add_nio_binding Edge 1 0 udp-5d56352f-8885-4610-b9fc-77ba95cdd377 
+2026-07-03T01:19:54.085Z HYPERVISOR: exec_cmd: vm get_status Edge 
+2026-07-03T01:20:34.922Z HYPERVISOR: exec_cmd: nio create_udp udp-6808c439-7bbc-491c-878b-fb6184f588d4 10016 127.0.0.1 10017 
+2026-07-03T01:20:34.923Z HYPERVISOR: exec_cmd: vm slot_add_nio_binding Edge 0 0 udp-6808c439-7bbc-491c-878b-fb6184f588d4 
+2026-07-03T01:20:34.923Z HYPERVISOR: exec_cmd: vm get_status Edge 
+2026-07-03T01:31:39.602Z HYPERVISOR: exec_cmd: vm set_ios Edge /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:31:42.277Z HYPERVISOR: exec_cmd: vm set_ios Edge /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:31:46.907Z HYPERVISOR: exec_cmd: vm set_ios Edge /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T02:05:37.218Z HYPERVISOR: exec_cmd: vm get_status Edge 
+2026-07-03T02:05:37.218Z HYPERVISOR: exec_cmd: vm extract_config Edge 
+2026-07-03T02:05:37.218Z HYPERVISOR: exec_cmd: vm delete Edge 
+2026-07-03T02:05:37.218Z VM: VM Edge destroyed.
+2026-07-03T02:05:37.219Z HYPERVISOR: exec_cmd: hypervisor stop 
+2026-07-03T02:05:37.447Z HYPERVISOR: Stopped.
+2026-07-03T02:05:37.447Z GENERAL: reset done.

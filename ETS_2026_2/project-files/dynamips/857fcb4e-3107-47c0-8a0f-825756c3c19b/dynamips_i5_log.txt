@@ -1,0 +1,36 @@
+2026-07-03T01:03:39.243Z HYPERVISOR: Release 0.2.24-amd64/Linux (tag 2023010200)
+2026-07-03T01:03:39.243Z HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 50641.
+2026-07-03T01:03:39.251Z HYPERVISOR: exec_cmd: hypervisor version 
+2026-07-03T01:03:39.251Z HYPERVISOR: exec_cmd: hypervisor working_dir /home/laweadelcoso/Documents/Repositories/Administraci-n-de-Servicios-en-Red/ETS_2026_2/project-files/dynamips 
+2026-07-03T01:03:39.251Z GENERAL: working_dir=/home/laweadelcoso/Documents/Repositories/Administraci-n-de-Servicios-en-Red/ETS_2026_2/project-files/dynamips
+2026-07-03T01:03:39.251Z HYPERVISOR: exec_cmd: hypervisor working_dir /home/laweadelcoso/Documents/Repositories/Administraci-n-de-Servicios-en-Red/ETS_2026_2/project-files/dynamips/857fcb4e-3107-47c0-8a0f-825756c3c19b 
+2026-07-03T01:03:39.251Z GENERAL: working_dir=/home/laweadelcoso/Documents/Repositories/Administraci-n-de-Servicios-en-Red/ETS_2026_2/project-files/dynamips/857fcb4e-3107-47c0-8a0f-825756c3c19b
+2026-07-03T01:03:39.251Z HYPERVISOR: exec_cmd: vm create R5 5 c7200 
+2026-07-03T01:03:39.251Z VM: VM R5 created.
+2026-07-03T01:03:39.251Z HYPERVISOR: exec_cmd: vm set_con_tcp_port R5 5005 
+2026-07-03T01:03:39.251Z HYPERVISOR: exec_cmd: c7200 get_mac_addr R5 
+2026-07-03T01:03:39.251Z HYPERVISOR: exec_cmd: vm get_status R5 
+2026-07-03T01:03:39.252Z HYPERVISOR: exec_cmd: vm slot_add_binding R5 0 0 C7200-IO-FE 
+2026-07-03T01:03:39.252Z HYPERVISOR: exec_cmd: vm set_nvram R5 512 
+2026-07-03T01:03:39.252Z HYPERVISOR: exec_cmd: vm set_ram R5 512 
+2026-07-03T01:03:39.252Z HYPERVISOR: exec_cmd: vm set_ios R5 /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:03:39.252Z HYPERVISOR: exec_cmd: vm get_status R5 
+2026-07-03T01:03:39.252Z HYPERVISOR: exec_cmd: vm set_idle_pc R5 0x6066a998 
+2026-07-03T01:03:39.252Z HYPERVISOR: exec_cmd: vm set_disk0 R5 0 
+2026-07-03T01:03:39.252Z HYPERVISOR: exec_cmd: vm get_status R5 
+2026-07-03T01:03:39.252Z HYPERVISOR: exec_cmd: vm slot_add_binding R5 1 0 PA-FE-TX 
+2026-07-03T01:03:39.253Z HYPERVISOR: exec_cmd: vm get_status R5 
+2026-07-03T01:03:39.253Z HYPERVISOR: exec_cmd: vm slot_add_binding R5 2 0 PA-FE-TX 
+2026-07-03T01:03:39.295Z HYPERVISOR: exec_cmd: vm set_ios R5 /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:03:51.919Z HYPERVISOR: exec_cmd: vm set_ios R5 /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:17:32.338Z HYPERVISOR: exec_cmd: vm set_ios R5 /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:17:32.338Z HYPERVISOR: exec_cmd: vm rename R5 Srv-DNS 
+2026-07-03T01:17:32.379Z HYPERVISOR: exec_cmd: vm set_ios Srv-DNS /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:21:28.220Z HYPERVISOR: exec_cmd: vm set_ios Srv-DNS /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T02:05:36.814Z HYPERVISOR: exec_cmd: vm get_status Srv-DNS 
+2026-07-03T02:05:36.814Z HYPERVISOR: exec_cmd: vm extract_config Srv-DNS 
+2026-07-03T02:05:36.814Z HYPERVISOR: exec_cmd: vm delete Srv-DNS 
+2026-07-03T02:05:36.814Z VM: VM Srv-DNS destroyed.
+2026-07-03T02:05:36.814Z HYPERVISOR: exec_cmd: hypervisor stop 
+2026-07-03T02:05:36.859Z HYPERVISOR: Stopped.
+2026-07-03T02:05:36.859Z GENERAL: reset done.

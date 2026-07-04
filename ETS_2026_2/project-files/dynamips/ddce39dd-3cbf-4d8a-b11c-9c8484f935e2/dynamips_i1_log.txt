@@ -1,0 +1,47 @@
+2026-07-03T01:03:33.315Z HYPERVISOR: Release 0.2.24-amd64/Linux (tag 2023010200)
+2026-07-03T01:03:33.315Z HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 55559.
+2026-07-03T01:03:33.315Z HYPERVISOR: exec_cmd: hypervisor version 
+2026-07-03T01:03:33.316Z HYPERVISOR: exec_cmd: hypervisor working_dir /home/laweadelcoso/Documents/Repositories/Administraci-n-de-Servicios-en-Red/ETS_2026_2/project-files/dynamips 
+2026-07-03T01:03:33.316Z GENERAL: working_dir=/home/laweadelcoso/Documents/Repositories/Administraci-n-de-Servicios-en-Red/ETS_2026_2/project-files/dynamips
+2026-07-03T01:03:33.316Z HYPERVISOR: exec_cmd: hypervisor working_dir /home/laweadelcoso/Documents/Repositories/Administraci-n-de-Servicios-en-Red/ETS_2026_2/project-files/dynamips/ddce39dd-3cbf-4d8a-b11c-9c8484f935e2 
+2026-07-03T01:03:33.316Z GENERAL: working_dir=/home/laweadelcoso/Documents/Repositories/Administraci-n-de-Servicios-en-Red/ETS_2026_2/project-files/dynamips/ddce39dd-3cbf-4d8a-b11c-9c8484f935e2
+2026-07-03T01:03:33.316Z HYPERVISOR: exec_cmd: vm create R1 1 c7200 
+2026-07-03T01:03:33.316Z VM: VM R1 created.
+2026-07-03T01:03:33.316Z HYPERVISOR: exec_cmd: vm set_con_tcp_port R1 5001 
+2026-07-03T01:03:33.316Z HYPERVISOR: exec_cmd: c7200 get_mac_addr R1 
+2026-07-03T01:03:33.316Z HYPERVISOR: exec_cmd: vm get_status R1 
+2026-07-03T01:03:33.316Z HYPERVISOR: exec_cmd: vm slot_add_binding R1 0 0 C7200-IO-FE 
+2026-07-03T01:03:33.316Z HYPERVISOR: exec_cmd: vm set_nvram R1 512 
+2026-07-03T01:03:33.317Z HYPERVISOR: exec_cmd: vm set_ram R1 512 
+2026-07-03T01:03:33.317Z HYPERVISOR: exec_cmd: vm set_ios R1 /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:03:33.317Z HYPERVISOR: exec_cmd: vm get_status R1 
+2026-07-03T01:03:33.317Z HYPERVISOR: exec_cmd: vm set_idle_pc R1 0x6066a998 
+2026-07-03T01:03:33.317Z HYPERVISOR: exec_cmd: vm set_disk0 R1 0 
+2026-07-03T01:03:33.317Z HYPERVISOR: exec_cmd: vm get_status R1 
+2026-07-03T01:03:33.317Z HYPERVISOR: exec_cmd: vm slot_add_binding R1 1 0 PA-FE-TX 
+2026-07-03T01:03:33.317Z HYPERVISOR: exec_cmd: vm get_status R1 
+2026-07-03T01:03:33.318Z HYPERVISOR: exec_cmd: vm slot_add_binding R1 2 0 PA-FE-TX 
+2026-07-03T01:03:33.349Z HYPERVISOR: exec_cmd: vm set_ios R1 /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:03:41.953Z HYPERVISOR: exec_cmd: vm set_ios R1 /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:03:46.074Z HYPERVISOR: exec_cmd: vm set_ios R1 /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:16:39.015Z HYPERVISOR: exec_cmd: vm set_ios R1 /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:16:39.016Z HYPERVISOR: exec_cmd: vm rename R1 ISP 
+2026-07-03T01:16:39.058Z HYPERVISOR: exec_cmd: vm set_ios ISP /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:18:50.471Z HYPERVISOR: exec_cmd: vm set_ios ISP /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:19:01.823Z HYPERVISOR: exec_cmd: vm set_ios ISP /home/laweadelcoso/GNS3/images/IOS/c7200-a3jk9s-mz.124-25g.image 
+2026-07-03T01:19:47.934Z HYPERVISOR: exec_cmd: nio create_udp udp-d9bdbb87-4c6a-422d-83e2-a0e89ef34335 10002 127.0.0.1 10003 
+2026-07-03T01:19:48.139Z HYPERVISOR: exec_cmd: vm slot_add_nio_binding ISP 0 0 udp-d9bdbb87-4c6a-422d-83e2-a0e89ef34335 
+2026-07-03T01:19:48.140Z HYPERVISOR: exec_cmd: vm get_status ISP 
+2026-07-03T01:19:53.874Z HYPERVISOR: exec_cmd: nio create_udp udp-ddea410d-796f-4115-9cfc-e87a41f5c4c5 10006 127.0.0.1 10007 
+2026-07-03T01:19:53.875Z HYPERVISOR: exec_cmd: vm slot_add_nio_binding ISP 1 0 udp-ddea410d-796f-4115-9cfc-e87a41f5c4c5 
+2026-07-03T01:19:53.875Z HYPERVISOR: exec_cmd: vm get_status ISP 
+2026-07-03T01:20:06.566Z HYPERVISOR: exec_cmd: nio create_udp udp-22966fb9-f831-473b-b2dc-852a99e4a619 10012 127.0.0.1 10013 
+2026-07-03T01:20:06.567Z HYPERVISOR: exec_cmd: vm slot_add_nio_binding ISP 2 0 udp-22966fb9-f831-473b-b2dc-852a99e4a619 
+2026-07-03T01:20:06.567Z HYPERVISOR: exec_cmd: vm get_status ISP 
+2026-07-03T02:05:37.218Z HYPERVISOR: exec_cmd: vm get_status ISP 
+2026-07-03T02:05:37.218Z HYPERVISOR: exec_cmd: vm extract_config ISP 
+2026-07-03T02:05:37.218Z HYPERVISOR: exec_cmd: vm delete ISP 
+2026-07-03T02:05:37.219Z VM: VM ISP destroyed.
+2026-07-03T02:05:37.219Z HYPERVISOR: exec_cmd: hypervisor stop 
+2026-07-03T02:05:37.449Z HYPERVISOR: Stopped.
+2026-07-03T02:05:37.449Z GENERAL: reset done.
