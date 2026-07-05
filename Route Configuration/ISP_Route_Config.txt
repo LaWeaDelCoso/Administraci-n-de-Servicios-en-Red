@@ -1,0 +1,9 @@
+enable
+configure terminal
+ip route 209.165.200.240 255.255.255.248 FastEthernet1/0
+ip route 0.0.0.0 0.0.0.0 FastEthernet0/0
+interface Loopback0
+ip address 209.165.200.241 255.255.255.255
+description SIMULA_SERVIDOR_INTERNET_PARA_PRUEBAS
+end
+write memory

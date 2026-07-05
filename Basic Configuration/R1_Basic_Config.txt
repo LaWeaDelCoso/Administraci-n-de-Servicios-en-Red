@@ -1,0 +1,15 @@
+enable
+configure terminal
+hostname R1
+interface FastEthernet0/0
+ip address 10.1.1.2 255.255.255.252
+no shutdown
+interface FastEthernet2/0
+ip address 192.168.11.129 255.255.255.192
+no shutdown
+interface FastEthernet1/0
+ip address 192.168.20.1 255.255.255.0
+description PLACEHOLDER_SUBRED_SORPRESA_LAN1
+no shutdown
+end
+write memory

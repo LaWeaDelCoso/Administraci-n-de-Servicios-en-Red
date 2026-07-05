@@ -1,0 +1,5 @@
+enable
+configure terminal
+ip route 209.165.200.240 255.255.255.248 200.10.10.1
+end
+write memory

@@ -1,0 +1,8 @@
+enable
+configure terminal
+hostname Srv-DNS
+interface FastEthernet0/0
+ip address 192.168.11.131 255.255.255.192
+no shutdown
+end
+write memory

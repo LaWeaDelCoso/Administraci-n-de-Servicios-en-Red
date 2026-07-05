@@ -1,0 +1,11 @@
+enable
+configure terminal
+hostname ISP
+interface FastEthernet2/0
+ip address 200.20.20.1 255.255.255.0
+no shutdown
+interface FastEthernet1/0
+ip address 200.10.10.1 255.255.255.252
+no shutdown
+end
+write memory
