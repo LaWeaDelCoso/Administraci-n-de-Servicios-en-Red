@@ -449,8 +449,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "ISP",
-                    "x": 18,
-                    "y": -25
+                    "x": 17,
+                    "y": -26
                 },
                 "locked": false,
                 "name": "ISP",

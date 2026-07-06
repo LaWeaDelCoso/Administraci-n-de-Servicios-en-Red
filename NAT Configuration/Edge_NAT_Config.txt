@@ -1,0 +1,17 @@
+enable
+configure terminal
+interface FastEthernet0/0
+ip nat inside
+exit
+interface FastEthernet1/0
+ip nat outside
+exit
+ip access-list standard NAT_INTERNAS
+permit 10.0.0.0 0.255.255.255
+permit 172.16.0.0 0.15.255.255
+permit 192.168.0.0 0.0.255.255
+exit
+ip nat inside source list NAT_INTERNAS interface FastEthernet1/0 overload
+ip route 0.0.0.0 0.0.0.0 200.10.10.1
+end
+write memory

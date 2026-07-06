@@ -1,0 +1,21 @@
+enable
+configure terminal
+interface FastEthernet0/0
+ip address dhcp
+no shutdown
+exit
+ip route 0.0.0.0 0.0.0.0 FastEthernet0/0
+end
+write memory
+
+enable
+configure terminal
+interface FastEthernet1/0
+ip nat inside
+interface FastEthernet0/0
+ip nat outside
+ip access-list standard NAT_TRANSITO
+permit any
+ip nat inside source list NAT_TRANSITO interface FastEthernet0/0 overload
+end
+write memory
