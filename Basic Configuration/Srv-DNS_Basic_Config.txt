@@ -6,3 +6,9 @@ ip address 192.168.11.131 255.255.255.192
 no shutdown
 end
 write memory
+
+enable
+configure terminal
+ip domain lookup
+end
+write memory

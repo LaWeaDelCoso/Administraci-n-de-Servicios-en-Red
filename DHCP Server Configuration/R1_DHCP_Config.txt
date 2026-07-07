@@ -1,0 +1,6 @@
+enable
+configure terminal
+interface FastEthernet1/0
+ip helper-address 192.168.11.130
+end
+write memory

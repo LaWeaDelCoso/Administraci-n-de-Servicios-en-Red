@@ -1,0 +1,91 @@
+ISP#show run | include ip route
+ip route 209.165.200.240 255.255.255.248 FastEthernet1/0
+
+Edge#show ip ospf neighbor
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+192.168.20.1      1   FULL/BDR        00:00:37    10.1.1.2        FastEthernet0/0
+
+R1#show ip ospf neighbor
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+200.10.10.2       1   FULL/DR         00:00:32    10.1.1.1        FastEthernet0/0
+
+PC1> ping pc2.ets.local
+pc2.ets.local resolved to 192.168.11.132
+84 bytes from 192.168.11.132 icmp_seq=1 ttl=63 time=89.868 ms
+84 bytes from 192.168.11.132 icmp_seq=2 ttl=63 time=45.731 ms
+84 bytes from 192.168.11.132 icmp_seq=3 ttl=63 time=35.683 ms
+84 bytes from 192.168.11.132 icmp_seq=4 ttl=63 time=46.189 ms
+84 bytes from 192.168.11.132 icmp_seq=5 ttl=63 time=36.032 ms
+PC1> ping srv-dns.ets.local
+srv-dns.ets.local resolved to 192.168.11.131
+84 bytes from 192.168.11.131 icmp_seq=1 ttl=254 time=59.763 ms
+84 bytes from 192.168.11.131 icmp_seq=2 ttl=254 time=45.633 ms
+84 bytes from 192.168.11.131 icmp_seq=3 ttl=254 time=65.083 ms
+84 bytes from 192.168.11.131 icmp_seq=4 ttl=254 time=75.710 ms
+84 bytes from 192.168.11.131 icmp_seq=5 ttl=254 time=35.521 ms
+PC1> ping hostexterno.ets.local
+hostexterno.ets.local resolved to 200.20.20.20
+84 bytes from 200.20.20.20 icmp_seq=1 ttl=61 time=181.082 ms
+84 bytes from 200.20.20.20 icmp_seq=2 ttl=61 time=126.158 ms
+84 bytes from 200.20.20.20 icmp_seq=3 ttl=61 time=136.143 ms
+84 bytes from 200.20.20.20 icmp_seq=4 ttl=61 time=157.837 ms
+84 bytes from 200.20.20.20 icmp_seq=5 ttl=61 time=167.199 ms
+
+PC2> ping 8.8.8.8
+84 bytes from 8.8.8.8 icmp_seq=1 ttl=112 time=141.870 ms
+84 bytes from 8.8.8.8 icmp_seq=2 ttl=112 time=136.307 ms
+84 bytes from 8.8.8.8 icmp_seq=3 ttl=112 time=155.977 ms
+84 bytes from 8.8.8.8 icmp_seq=4 ttl=112 time=168.674 ms
+84 bytes from 8.8.8.8 icmp_seq=5 ttl=112 time=126.684 ms
+
+HostExterno a PC1 FALLIDO (Por NAT, es Esperable)
+HostExterno> ping 192.168.20.4
+192.168.20.4 icmp_seq=1 timeout
+192.168.20.4 icmp_seq=2 timeout
+192.168.20.4 icmp_seq=3 timeout
+192.168.20.4 icmp_seq=4 timeout
+192.168.20.4 icmp_seq=5 timeout
+
+R1#ping 209.165.200.241
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 209.165.200.241, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 60/80/100 ms
+
+Srv-DHCP#show ip dhcp binding
+Bindings from all pools not associated with VRF:
+IP address          Client-ID/             Lease expiration        Type
+            Hardware address/
+            User name
+192.168.11.132      0100.5079.6668.01       Jul 08 2026 06:08 PM    Automatic
+192.168.20.4        0100.5079.6668.00       Jul 08 2026 06:26 PM    Automatic
+
+PC1> ping srv-dns.ets.local
+srv-dns.ets.local resolved to 192.168.11.131
+84 bytes from 192.168.11.131 icmp_seq=1 ttl=254 time=59.902 ms
+84 bytes from 192.168.11.131 icmp_seq=2 ttl=254 time=66.305 ms
+84 bytes from 192.168.11.131 icmp_seq=3 ttl=254 time=46.028 ms
+84 bytes from 192.168.11.131 icmp_seq=4 ttl=254 time=36.037 ms
+84 bytes from 192.168.11.131 icmp_seq=5 ttl=254 time=76.680 ms
+PC1> ping hostexterno.ets.local
+hostexterno.ets.local resolved to 200.20.20.20
+84 bytes from 200.20.20.20 icmp_seq=1 ttl=61 time=150.593 ms
+84 bytes from 200.20.20.20 icmp_seq=2 ttl=61 time=157.212 ms
+84 bytes from 200.20.20.20 icmp_seq=3 ttl=61 time=137.721 ms
+84 bytes from 200.20.20.20 icmp_seq=4 ttl=61 time=127.120 ms
+84 bytes from 200.20.20.20 icmp_seq=5 ttl=61 time=166.764 ms
+
+PC2> ping srv-dns.ets.local
+srv-dns.ets.local resolved to 192.168.11.131
+84 bytes from 192.168.11.131 icmp_seq=1 ttl=255 time=29.719 ms
+84 bytes from 192.168.11.131 icmp_seq=2 ttl=255 time=35.202 ms
+84 bytes from 192.168.11.131 icmp_seq=3 ttl=255 time=25.264 ms
+84 bytes from 192.168.11.131 icmp_seq=4 ttl=255 time=36.096 ms
+84 bytes from 192.168.11.131 icmp_seq=5 ttl=255 time=35.082 ms
+PC2> ping hostexterno.ets.local
+hostexterno.ets.local resolved to 200.20.20.20
+84 bytes from 200.20.20.20 icmp_seq=1 ttl=61 time=220.959 ms
+84 bytes from 200.20.20.20 icmp_seq=2 ttl=61 time=155.956 ms
+84 bytes from 200.20.20.20 icmp_seq=3 ttl=61 time=106.444 ms
+84 bytes from 200.20.20.20 icmp_seq=4 ttl=61 time=127.238 ms
+84 bytes from 200.20.20.20 icmp_seq=5 ttl=61 time=137.242 ms

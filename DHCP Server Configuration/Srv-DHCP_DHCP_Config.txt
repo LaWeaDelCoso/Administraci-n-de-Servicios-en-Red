@@ -1,0 +1,19 @@
+enable
+configure terminal
+hostname Srv-DHCP
+service dhcp
+!
+ip dhcp excluded-address 192.168.11.129 192.168.11.131
+ip dhcp excluded-address 192.168.20.1
+!
+ip dhcp pool LAN2_POOL
+ network 192.168.11.128 255.255.255.192
+ default-router 192.168.11.129
+ dns-server 192.168.11.131
+!
+ip dhcp pool LAN1_POOL
+ network 192.168.20.0 255.255.255.0
+ default-router 192.168.20.1
+ dns-server 192.168.11.131
+end
+write memory
