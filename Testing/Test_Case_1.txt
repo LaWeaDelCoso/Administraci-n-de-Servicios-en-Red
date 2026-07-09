@@ -1,0 +1,9 @@
+(recordar actualizar dns por si a caso)
+! PC1
+ip dhcp
+ping 192.168.50.1
+ping srv-dhcp.ets.local
+ping srv-dns.ets.local
+ping 8.8.8.8
+! PC2
+ping pc1.ets.local

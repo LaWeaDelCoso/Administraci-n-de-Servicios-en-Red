@@ -1,0 +1,12 @@
+! PC1
+ip dhcp
+ping 192.168.77.1
+ping srv-dns.ets.local
+! PC2
+ip dhcp
+ping 172.30.10.1
+ping srv-dhcp.ets.local
+! Cruzado
+! PC1 -> PC2 y viceversa 
+! PC1 -> 8.8.8.8
+! PC2 -> 8.8.8.8

@@ -1,0 +1,8 @@
+! PC2
+ip dhcp
+ping 10.50.60.1
+ping srv-dhcp.ets.local
+ping 8.8.8.8
+! PC1 (LAN1 no se tocó, pero los servidores sí se movieron)
+ping srv-dhcp.ets.local
+ping srv-dns.ets.local
