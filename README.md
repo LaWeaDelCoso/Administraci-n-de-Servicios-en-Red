@@ -68,7 +68,7 @@ El proyecto se organizó en pasos secuenciales. Para cada paso se definieron las
 La **Figura 1** muestra la topología final construida en GNS3 para efectos de práctica, la cual reproduce fielmente la topología ilustrativa del documento oficial, con la adición de dos routers dedicados a los servicios de DNS y DHCP.
 
 <p align="center">
-  <img src="Administraci-n-de-Servicios-en-Red/0.-%20Reporte/figures/Full_Topology.png" alt="Topología completa construida en GNS3 para la práctica del ETS." width="90%"><br>
+  <img src="Administraci-n-de-Servicios-en-Red/blob/main/0.-%20Reporte/figures/Full_Topology.png" alt="Topología completa construida en GNS3 para la práctica del ETS." width="90%"><br>
   <em>Figura 1: Topología completa construida en GNS3 para la práctica del ETS.</em>
 </p>
 
