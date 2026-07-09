@@ -68,7 +68,7 @@ El proyecto se organizó en pasos secuenciales. Para cada paso se definieron las
 La **Figura 1** muestra la topología final construida en GNS3 para efectos de práctica, la cual reproduce fielmente la topología ilustrativa del documento oficial, con la adición de dos routers dedicados a los servicios de DNS y DHCP.
 
 <p align="center">
-  <img src="Administraci-n-de-Servicios-en-Red/blob/main/0.-%20Reporte/figures/Full_Topology.png" alt="Topología completa construida en GNS3 para la práctica del ETS." width="90%"><br>
+  <img src="/0.-%20Reporte/figures/Full_Topology.png" alt="Topología completa construida en GNS3 para la práctica del ETS." width="90%"><br>
   <em>Figura 1: Topología completa construida en GNS3 para la práctica del ETS.</em>
 </p>
 
@@ -137,7 +137,7 @@ ip route 0.0.0.0 0.0.0.0 FastEthernet0/0</strong> (Asignada por el NAT de GNS3)
 Para validar la primera ruta sin depender de dispositivos externos al laboratorio, se configuró en el propio ISP una interfaz de *loopback* como host de prueba (`209.165.200.241/32`), y en Edge una ruta estática puntual hacia dicha subred a través de ISP. Se documenta que este loopback y la ruta en Edge son artefactos exclusivos de prueba del alumno, no un requisito literal del documento.
 
 <p align="center">
-  <img src="Administraci-n-de-Servicios-en-Red/0.-%20Reporte/figures/ISP_SHOW_IP_ROUTE.png" alt="Verificación de las dos rutas estáticas permitidas en ISP." width="80%"><br>
+  <img src="/0.-%20Reporte/figures/ISP_SHOW_IP_ROUTE.png" alt="Verificación de las dos rutas estáticas permitidas en ISP." width="80%"><br>
   <em>Figura 2: Verificación de las dos rutas estáticas permitidas en ISP.</em>
 </p>
 
@@ -161,7 +161,7 @@ router ospf 1
 Se optó por que Edge origine una ruta por defecto hacia OSPF mediante `default-information originate always`, en lugar de redistribuir puntualmente rutas específicas. De esta manera, cualquier destino externo a la red interna —incluyendo cualquier prueba adicional o el tráfico real hacia Internet— queda resuelto automáticamente para R1 y todo lo que cuelga de él, sin necesidad de modificar la configuración de OSPF ante cambios futuros.
 
 <p align="center">
-  <img src="Administraci-n-de-Servicios-en-Red/0.-%20Reporte/figures/show_ip_ospf_neighbor.png" alt="Adyacencia OSPF establecida (estado FULL) entre Edge y R1." width="85%"><br>
+  <img src="/0.-%20Reporte/figures/show_ip_ospf_neighbor.png" alt="Adyacencia OSPF establecida (estado FULL) entre Edge y R1." width="85%"><br>
   <em>Figura 3: Adyacencia OSPF establecida (estado FULL) entre Edge y R1.</em>
 </p>
 
@@ -199,11 +199,11 @@ ip nat inside source list NAT_TRANSITO interface FastEthernet0/0 overload</stron
 <table align="center">
   <tr>
     <td align="center">
-      <img src="Administraci-n-de-Servicios-en-Red/0.-%20Reporte/figures/nat_translations_edge.png" alt="Traducciones NAT activas en Edge (NAT overload interno)." width="90%"><br>
+      <img src="/0.-%20Reporte/figures/nat_translations_edge.png" alt="Traducciones NAT activas en Edge (NAT overload interno)." width="90%"><br>
       <em>Figura 4: Traducciones NAT activas en Edge.</em>
     </td>
     <td align="center">
-      <img src="Administraci-n-de-Servicios-en-Red/0.-%20Reporte/figures/nat_translations_isp.png" alt="Traducciones NAT en cadena activas en ISP (doble PAT hacia Internet real)." width="90%"><br>
+      <img src="/0.-%20Reporte/figures/nat_translations_isp.png" alt="Traducciones NAT en cadena activas en ISP (doble PAT hacia Internet real)." width="90%"><br>
       <em>Figura 5: Traducciones NAT en cadena activas en ISP.</em>
     </td>
   </tr>
@@ -235,7 +235,7 @@ ip helper-address 192.168.11.130</strong>
 Durante las pruebas iniciales se detectó que los clientes de la LAN sin servidor local no lograban obtener dirección, mientras que los de la LAN local al servidor sí. El diagnóstico aisló el problema en que `Srv-DHCP` (y por el mismo motivo, `Srv-DNS`) únicamente contaban con la dirección de su propia interfaz, sin ruta de regreso hacia el resto de la red, por lo que no podían enviar sus respuestas de vuelta a los segmentos remotos. La solución consistió en agregar una ruta por defecto en ambos servidores apuntando a `R1`.
 
 <p align="center">
-  <img src="Administraci-n-de-Servicios-en-Red/0.-%20Reporte/figures/show_ip_dhcp_binding.png" alt="Concesiones DHCP activas en Srv-DHCP para ambas LAN." width="80%"><br>
+  <img src="/0.-%20Reporte/figures/show_ip_dhcp_binding.png" alt="Concesiones DHCP activas en Srv-DHCP para ambas LAN." width="80%"><br>
   <em>Figura 6: Concesiones DHCP activas en Srv-DHCP para ambas LAN.</em>
 </p>
 
@@ -266,7 +266,7 @@ Dado que <code>PC1</code> y <code>PC2</code> obtienen dirección por DHCP, exist
 <p>Se optó por la alternativa (B), dado que, al esperarse subredes "sorpresa" distintas el día del examen, de cualquier forma será necesario reconfigurar manualmente los ámbitos de DHCP y el <code>ip helper-address</code> de R1, por lo que la ventaja de "cero mantenimiento" de la alternativa (A) se pierde en ese escenario. La alternativa (A) se documenta como solución técnicamente válida, no implementada.</p>
 
 <p align="center">
-  <img src="Administraci-n-de-Servicios-en-Red/0.-%20Reporte/figures/dns_resolution_pc1.png" alt="Resolución de nombres interna, externa y vía forwarder desde PC1." width="80%"><br>
+  <img src="/0.-%20Reporte/figures/dns_resolution_pc1.png" alt="Resolución de nombres interna, externa y vía forwarder desde PC1." width="80%"><br>
   <em>Figura 7: Resolución de nombres interna, externa y vía forwarder desde PC1.</em>
 </p>
 
@@ -346,7 +346,7 @@ Se simuló la asignación de la subred `172.16.50.0/28` para la LAN de `PC1`. Lo
 Se simuló la asignación de la subred `10.30.30.0/27` para la LAN donde residen `Srv-DHCP` y `Srv-DNS`, escenario más exigente al requerir la reubicación de ambos servidores. Se actualizaron: la dirección de `R1` en la interfaz correspondiente y su sentencia `network` de OSPF; el `ip helper-address` de R1 hacia la nueva dirección de `Srv-DHCP`; las direcciones IP y rutas por defecto de ambos servidores; el ámbito de DHCP; y los registros `ip host` en `Srv-DNS`. Nuevamente, el NAT de Edge no requirió ningún cambio.
 
 <p align="center">
-  <img src="Administraci-n-de-Servicios-en-Red/0.-%20Reporte/figures/Escenario_B.png" alt="Evidencia de la reconfiguración exitosa del Escenario B." width="80%"><br>
+  <img src="/0.-%20Reporte/figures/Escenario_B.png" alt="Evidencia de la reconfiguración exitosa del Escenario B." width="80%"><br>
   <em>Figura 8: Evidencia de la reconfiguración exitosa del Escenario B.</em>
 </p>
 
