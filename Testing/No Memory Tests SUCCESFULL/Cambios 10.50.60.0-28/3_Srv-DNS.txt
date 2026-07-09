@@ -1,0 +1,37 @@
+! ============================================================
+! Reconfiguracion de Srv-DNS ante subred sorpresa en LAN2
+! Modo de estado: NO MEMORY (estado base al cierre de pruebas)
+! ============================================================
+enable
+configure terminal
+interface FastEthernet0/0
+ no ip address
+ ip address 10.50.60.3 255.255.255.240
+!
+no ip route 0.0.0.0 0.0.0.0 192.168.11.129
+ip route 0.0.0.0 0.0.0.0 10.50.60.1
+!
+! --- Actualizacion de registros DNS (entidades con IP fija) ---
+no ip host srv-dns.ets.local 192.168.11.131
+ip host srv-dns.ets.local 10.50.60.3
+no ip host srv-dhcp.ets.local 192.168.11.130
+ip host srv-dhcp.ets.local 10.50.60.2
+no ip host r1.ets.local 192.168.11.129
+ip host r1.ets.local 10.50.60.1
+end
+write memory
+
+! --- Verificacion sugerida ---
+! ping www.cisco.com
+
+! ============================================================
+! PENDIENTE MANUAL:
+! Los registros de PC1/PC2 usan IP dinamica y no se pueden prever
+! de antemano. Procedimiento:
+!   1) En Srv-DHCP: show ip dhcp binding o show ip en ambas VPC
+!   2) En Srv-DNS, por cada host afectado:
+!        no ip host pc1.ets.local <ip-vieja>
+!        ip host pc1.ets.local <ip-nueva>
+!        no ip host pc2.ets.local <ip-vieja>
+!        ip host pc2.ets.local <ip-nueva>
+! ============================================================

@@ -1,0 +1,8 @@
+! En Srv-DNS, tras revisar "show ip dhcp binding" en Srv-DHCP o show ip en cada VPC
+enable
+configure terminal
+no ip host pc1.ets.local 192.168.20.4 o <ip-vieja>
+no ip host pc2.ets.local 192.168.11.132 o <ip-vieja>
+ip host pc1.ets.local <ip-nueva>
+ip host pc2.ets.local <ip-nueva>
+end

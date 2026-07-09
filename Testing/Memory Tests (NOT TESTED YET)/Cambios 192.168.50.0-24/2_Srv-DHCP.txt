@@ -1,0 +1,26 @@
+! ============================================================
+! Reconfiguracion de Srv-DHCP ante subred(es) sorpresa
+! Modo de estado: MEMORY (estado base = ultimo cambio aplicado)
+! ============================================================
+enable
+configure terminal
+!
+! --- Pool DHCP de LAN1 ---
+no ip dhcp pool LAN1_POOL
+no ip dhcp excluded-address 192.168.20.1
+ip dhcp excluded-address 192.168.50.1
+ip dhcp pool LAN1_POOL
+ network 192.168.50.0 255.255.255.0
+ default-router 192.168.50.1
+ dns-server 192.168.11.131
+end
+write memory
+
+! --- Verificacion sugerida ---
+! show ip dhcp binding
+! show ip dhcp pool
+
+! NOTA:
+! en los hosts VPCS afectados, tras renovar con 'ip dhcp' es
+! necesario re-teclear manualmente 'ip dns <ip-de-Srv-DNS>', ya que VPCS
+! no siempre adopta automaticamente el DNS entregado por el pool.

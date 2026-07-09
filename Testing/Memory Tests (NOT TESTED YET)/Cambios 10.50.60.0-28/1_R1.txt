@@ -1,0 +1,28 @@
+! ============================================================
+! Reconfiguracion de R1 ante subred(es) sorpresa
+! Modo de estado: MEMORY (estado base = ultimo cambio aplicado)
+! ============================================================
+enable
+configure terminal
+!
+! --- FastEthernet1/0 (hacia LAN1 / Switch1) ---
+interface FastEthernet1/0
+ no ip helper-address 192.168.11.130
+ ip helper-address 10.50.60.2
+!
+! --- FastEthernet2/0 (hacia LAN2 / Switch2) ---
+interface FastEthernet2/0
+ no ip address
+ ip address 10.50.60.1 255.255.255.240
+ description SUBRED_SORPRESA_LAN2_APLICADA
+!
+router ospf 1
+ no network 192.168.11.128 0.0.0.63 area 0
+ network 10.50.60.0 0.0.0.15 area 0
+end
+write memory
+
+! --- Verificacion sugerida ---
+! show ip interface brief
+! show ip ospf neighbor
+! show ip route ospf
